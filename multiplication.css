@@ -2,6 +2,14 @@ header{
     text-align: center;
 }
 
+body{
+    background-image: url("homer.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+
+}
+
 #nombres{
     text-align: center;
 }
