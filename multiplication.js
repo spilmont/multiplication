@@ -25,12 +25,17 @@ document.getElementById("ok").addEventListener("click", function(){
     if(nResultat == nUser ){
 
         document.getElementById("resultat").innerHTML="Bravo, vous avez trouvé le résultat";
+        document.getElementById("resultat").style.animation ="textV 1s infinite";
         document.getElementById("text").value ="";
+        document.getElementById("text").style.backgroundColor ="white";
+
         nAlea();
     }
     else if(nResultat !== nUser){
 
         document.getElementById("resultat").innerHTML=" Perdu Réesseyer";
+        document.getElementById("resultat").style.animation ="textR 1s infinite";
+        document.getElementById("text").style.backgroundColor ="red";
     }
 
 });
