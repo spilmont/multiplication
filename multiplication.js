@@ -11,31 +11,55 @@ function nAlea() {
 
     nResultat = nAlea1 * nAlea2;
     document.getElementById("nombres").innerHTML = nAlea1 + "X" + nAlea2;
-
 }
-
 nAlea();
+function jouer()
+
+    {
+        var nUser=document.getElementById("text").value;
+
+        if(nResultat == nUser ){
+
+            document.getElementById("resultat").innerHTML="Bravo, vous avez trouvé le résultat";
+            document.getElementById("resultat").style.animation ="textV 1s infinite";
+            document.getElementById("text").value ="";
+            document.getElementById("text").style.backgroundColor ="white";
+
+            nAlea();
+        }
+        else if(nResultat !== nUser){
+
+            document.getElementById("resultat").innerHTML=" Perdu Réesseyer";
+            document.getElementById("resultat").style.animation ="textR 1s infinite";
+            document.getElementById("text").style.backgroundColor ="red";
+        }
+    }
+
+
+
+
 
 
 
 document.getElementById("ok").addEventListener("click", function(){
 
-    var nUser=document.getElementById("text").value;
+    jouer();
 
-    if(nResultat == nUser ){
-
-        document.getElementById("resultat").innerHTML="Bravo, vous avez trouvé le résultat";
-        document.getElementById("resultat").style.animation ="textV 1s infinite";
-        document.getElementById("text").value ="";
-        document.getElementById("text").style.backgroundColor ="white";
-
-        nAlea();
-    }
-    else if(nResultat !== nUser){
-
-        document.getElementById("resultat").innerHTML=" Perdu Réesseyer";
-        document.getElementById("resultat").style.animation ="textR 1s infinite";
-        document.getElementById("text").style.backgroundColor ="red";
-    }
 
 });
+
+document.getElementById('text').addEventListener('keypress', (event) => {
+    const keyName = event.key;
+    if(keyName ==='Enter') {
+        jouer();
+    }
+        else
+        {
+            console.log(keyName);
+
+        }
+    });
+
+
+
+
